@@ -10,8 +10,14 @@ get '/secret' do
   "You shall know no pain"
 end
 
-get '/cat' do
-  @random_name = ["Angry Ron", "Hungry Hippo", "Viking the greek", "Morty", "Rick", "C'thulhu", "Yogg-sototh"].sample
+get '/random-cat' do
+  @name = ["Angry Ron", "Hungry Hippo", "Viking the greek", "Morty", "Rick", "C'thulhu", "Yogg-sototh"].sample
+  erb:index
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb:index
 end
 
